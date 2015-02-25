@@ -1,0 +1,16 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+@import "_fonts.scss";
+
+*{
+	box-sizing: border-box;
+	moz-box-sizing: border-box;
+}
+
+html{
+	font-size: 16px;
+}
+
+body{
+	background: $Orinoco;
+}
