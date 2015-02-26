@@ -20,16 +20,18 @@ body{
 			position: absolute;
 			background: $imgtxt-overlay-gradient, url('../imgs/bg_grass.jpg');
 			@include hw (100%, 100%);
+			font-family: 'Geometria', sans-serif;
+
 
 			img[src*="logo"]{
 				display: block;
 				@include hw(auto, 72%);
 				margin: 2em auto;
+				border-radius: 15%;
 			}
 
 			h1{
 				text-align: center;
-				font-family: 'Geometria', sans-serif;
 				font-size: $geometria-h1;
 				color: #feffef;
 
@@ -44,11 +46,12 @@ body{
 				bottom: 0;
 				@include hw(20%, 100%);
 				background: $Orinoco;
+				@include vendors (box-shadow, inset 0px 0.8em 0.65em -0.2em rgba(111,121,100,1));
 
 				button{
 					display: block;
 					background: transparent;
-					margin: 1.6em auto 0.5em;
+					margin: 2.2em auto 0.5em;
 					color: $Ash;
 					@include vendors (transform, rotate(90deg));
 				}
