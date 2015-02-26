@@ -14,3 +14,49 @@ html{
 body{
 	background: $Orinoco;
 }
+
+		header{
+			display: block;
+			position: absolute;
+			background: $imgtxt-overlay-gradient, url('../imgs/bg_grass.jpg');
+			@include hw (100%, 100%);
+
+			img[src*="logo"]{
+				display: block;
+				@include hw(auto, 72%);
+				margin: 2em auto;
+			}
+
+			h1{
+				text-align: center;
+				font-family: 'Geometria', sans-serif;
+				font-size: $geometria-h1;
+				color: #feffef;
+
+			}
+
+			h2{
+				display: none;
+			}
+
+			.header-bottom{
+				position: absolute;
+				bottom: 0;
+				@include hw(20%, 100%);
+				background: $Orinoco;
+
+				button{
+					display: block;
+					background: transparent;
+					margin: 1.6em auto 0.5em;
+					color: $Ash;
+					@include vendors (transform, rotate(90deg));
+				}
+			}
+		}
+
+p{
+	font-size: $geometria-base;
+	color: #000;
+	font-family: 'Geometria';
+}

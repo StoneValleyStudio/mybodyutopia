@@ -11,3 +11,8 @@
 	-o-#{$property}: #{$value};
 	#{$property}: #{$value};
 }
+
+@mixin hw($height, $width){
+	height: $height;
+	width: $width;
+}

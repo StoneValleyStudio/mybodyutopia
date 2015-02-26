@@ -1,6 +1,9 @@
-var $mobile_menu_button = $('.menu-button');
-var $mobile_intro = $('#header');
+// Mobile Start Screen Animation
 
-$mobile_menu_button.on('click touchend', function () {
-	$mobile_intro.slideUp(550);
+var $mb_start = $('header');
+var $header_bottom = $('.header-bottom');
+
+$header_bottom.on('click touchend', function () {
+	$header_bottom.hide();
+	$mb_start.slideUp(550);
 });
