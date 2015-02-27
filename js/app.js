@@ -1,9 +1,11 @@
 // Mobile Start Screen Animation
 
-var $mb_start = $('header');
+var $mbStartScreen = $('header');
 var $header_bottom = $('.header-bottom');
+var $menu = $('#menu');
 
 $header_bottom.on('click touchend', function () {
 	$header_bottom.slideDown(475);
-	$mb_start.slideUp(550);
+	$mbStartScreen.slideUp(550);
+	$menu.slicknav(); //Initialize slicknav on header close
 });
