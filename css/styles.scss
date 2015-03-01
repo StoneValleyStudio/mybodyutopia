@@ -14,49 +14,54 @@ html{
 
 body{
 	background: $Orinoco;
+	width: 100%;
 }
 
-		header{
+#mobile-intro{
+	display: block;
+	position: fixed;
+	background: $imgtxt-overlay-gradient, url('../imgs/bg_grass.jpg');
+	@include hw (100%, 100%);
+	font-family: 'Geometria', sans-serif;
+
+
+	img[src*="logo"]{
+		display: block;
+		@include hw(auto, 62%);
+		margin: 2em auto 0.75em;
+		border-radius: 15%;
+	}
+
+	h1{
+		text-align: center;
+		font-size: $geometria-h1;
+		color: #feffef;
+
+	}
+
+	h2{
+		display: none;
+	}
+
+	.mobile-intro-bottom{
+		position: absolute;
+		bottom: 0;
+		@include hw(20%, 100%);
+		background: $Orinoco;
+		@include vendors (box-shadow, inset 0px 0.6em 0.7em -0.2em $Ash);
+
+		button{
 			display: block;
-			position: absolute;
-			background: $imgtxt-overlay-gradient, url('../imgs/bg_grass.jpg');
-			@include hw (100%, 100%);
-			font-family: 'Geometria', sans-serif;
-
-
-			img[src*="logo"]{
-				display: block;
-				@include hw(auto, 62%);
-				margin: 2em auto 0.75em;
-				border-radius: 15%;
-			}
-
-			h1{
-				text-align: center;
-				font-size: $geometria-h1;
-				color: #feffef;
-
-			}
-
-			h2{
-				display: none;
-			}
-
-			.header-bottom{
-				position: absolute;
-				bottom: 0;
-				@include hw(20%, 100%);
-				background: $Orinoco;
-				@include vendors (box-shadow, inset 0px 0.6em 0.7em -0.2em $Ash);
-
-				button{
-					display: block;
-					background: transparent;
-					margin: 1.9em auto 0.5em;
-					color: $Ash;
-				}
-			}
+			background: transparent;
+			margin: 1.9em auto 0.5em;
+			color: $Ash;
 		}
+	}
+
+	@media screen and (min-width: 500px){
+		display: none;
+	}
+}
 
 
 
@@ -84,10 +89,71 @@ nav{
 	@include hw (auto, 100%);
 	position: absolute;
 	z-index: -1000;
-	margin-top: 4em;
+	margin-top: 3em;
+	padding-top: 1.5em;
+}
+
+.carousel{
+	display: block;
+	height: 19em;
+	width: 100%;
+	div{
+		height: 19em;
+		width: 100%;
+		text-align: center;
+
+		.slide-1{
+			background: url('../imgs/rainee-bg.png');
+			font-family: 'Geometria', sans-serif;
+			color: $black;
+			text-align: center;
+
+			h1{
+				font-size: $geometria-h3;
+				margin-top: 0.4em;
+			}
+
+			img[src*="logo"]{
+				display: block;
+				@include hw(auto, 27.5%);
+				margin: 1.125em auto;
+			}
+
+			h2{
+				width: 100%;
+			}
+		}
+
+		.slide-2{
+			background: url('../imgs/ash-bg.png');
+			color: $white;
+
+			h2{
+				width: 100%;
+				text-align: center;
+				margin-top: 5em;
+				font-size: $geometria-h3;
+				font-family: 'Geometria', sans-serif;
+			}
+		}
+
+		.slide-3{
+			background: url('../imgs/fern-bg.png');
+			color: $white;
+
+			h2{
+				margin-top: 5em;
+				width: 100%;
+				text-align: center;
+				font-size: $geometria-h3;
+				font-family: 'Geometria', sans-serif;
+			}		
+		}
+	}
 }
 
 p{
+	padding-top: 2em;
 	font-size: $geometria-base;
 	color: #000;
 	font-family: 'Geometria';

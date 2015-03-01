@@ -4,6 +4,11 @@ $Orinoco: #E3F9CE; //base color
 $Fern: #5C7940;
 $Rainee: #B4C6A4;
 $Ash: #6F7964;
+	//mixin for body copy color
+	$Ash-darken: darken($Ash, 40%);
+	$black: $Ash-darken;
+	$Ash-lighten: lighten($Ash, 52%);
+	$white: $Ash-lighten;
 $Mindaro: #BEFA84;
 $Wisteria: #A56CAC;
 $Perfume: #F4CEF9;

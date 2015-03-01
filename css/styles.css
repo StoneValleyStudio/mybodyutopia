@@ -142,30 +142,33 @@
   margin: 5px 5px 6px;
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  background-color: #222222; }
+  -webkit-border-radius: 3.4px;
+  -moz-border-radius: 3.4px;
+  border-radius: 3.4px;
+  background-color: #B4C6A4; }
 
 /* Button Text */
 .slicknav_menu .slicknav_menutxt {
-  color: #FFF;
+  color: #001010;
   font-weight: bold;
-  text-shadow: 0 1px 3px #000; }
+  font-family: 'Geometria', sans-serif; }
 
 /* Button Lines */
 .slicknav_menu .slicknav_icon-bar {
-  background-color: #6F7964; }
+  background-color: url("../imgs/fern-bg.png"); }
 
 .slicknav_menu {
-  background: rgba(92, 121, 64, 0.275);
-  padding: 5px; }
+  background: url("../imgs/fern-bg.png");
+  opacity: 1;
+  padding: 5px;
+  border-radius: 0 0 8.9% 8.9%; }
 
 .slicknav_nav {
-  color: #fff;
+  color: #E3F9CE;
   margin: 0;
   padding: 0;
-  font-size: 0.875em; }
+  font-size: 1.75em;
+  font-family: 'Geometria', sans-serif; }
 
 .slicknav_nav, .slicknav_nav ul {
   list-style: none;
@@ -183,7 +186,7 @@
   padding: 5px 10px;
   margin: 2px 5px;
   text-decoration: none;
-  color: #fff; }
+  color: #E3F9CE; }
 
 .slicknav_nav .slicknav_item a,
 .slicknav_nav .slicknav_parent-link a {
@@ -215,28 +218,29 @@ html {
   font-size: 16px; }
 
 body {
-  background: #E3F9CE; }
+  background: #E3F9CE;
+  width: 100%; }
 
-header {
+#mobile-intro {
   display: block;
-  position: absolute;
+  position: fixed;
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7)), url("../imgs/bg_grass.jpg");
   height: 100%;
   width: 100%;
   font-family: 'Geometria', sans-serif; }
-  header img[src*="logo"] {
+  #mobile-intro img[src*="logo"] {
     display: block;
     height: auto;
     width: 62%;
     margin: 2em auto 0.75em;
     border-radius: 15%; }
-  header h1 {
+  #mobile-intro h1 {
     text-align: center;
     font-size: 3.998em;
     color: #feffef; }
-  header h2 {
+  #mobile-intro h2 {
     display: none; }
-  header .header-bottom {
+  #mobile-intro .mobile-intro-bottom {
     position: absolute;
     bottom: 0;
     height: 20%;
@@ -247,11 +251,14 @@ header {
     -ms-box-shadow: inset 0px 0.6em 0.7em -0.2em #6F7964;
     -o-box-shadow: inset 0px 0.6em 0.7em -0.2em #6F7964;
     box-shadow: inset 0px 0.6em 0.7em -0.2em #6F7964; }
-    header .header-bottom button {
+    #mobile-intro .mobile-intro-bottom button {
       display: block;
       background: transparent;
       margin: 1.9em auto 0.5em;
       color: #6F7964; }
+  @media screen and (min-width: 500px) {
+    #mobile-intro {
+      display: none; } }
 
 .slicknav_menu {
   display: block; }
@@ -272,9 +279,53 @@ nav {
   width: 100%;
   position: absolute;
   z-index: -1000;
-  margin-top: 4em; }
+  margin-top: 3em;
+  padding-top: 1.5em; }
+
+.carousel {
+  display: block;
+  height: 19em;
+  width: 100%; }
+  .carousel div {
+    height: 19em;
+    width: 100%;
+    text-align: center; }
+    .carousel div .slide-1 {
+      background: url("../imgs/rainee-bg.png");
+      font-family: 'Geometria', sans-serif;
+      color: #090908;
+      text-align: center; }
+      .carousel div .slide-1 h1 {
+        font-size: 1.999em;
+        margin-top: 0.4em; }
+      .carousel div .slide-1 img[src*="logo"] {
+        display: block;
+        height: auto;
+        width: 27.5%;
+        margin: 1.125em auto; }
+      .carousel div .slide-1 h2 {
+        width: 100%; }
+    .carousel div .slide-2 {
+      background: url("../imgs/ash-bg.png");
+      color: #f3f4f2; }
+      .carousel div .slide-2 h2 {
+        width: 100%;
+        text-align: center;
+        margin-top: 5em;
+        font-size: 1.999em;
+        font-family: 'Geometria', sans-serif; }
+    .carousel div .slide-3 {
+      background: url("../imgs/fern-bg.png");
+      color: #f3f4f2; }
+      .carousel div .slide-3 h2 {
+        margin-top: 5em;
+        width: 100%;
+        text-align: center;
+        font-size: 1.999em;
+        font-family: 'Geometria', sans-serif; }
 
 p {
+  padding-top: 2em;
   font-size: 1.25em;
   color: #000;
   font-family: 'Geometria'; }
