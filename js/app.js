@@ -1,3 +1,7 @@
+/*Before we begin, SlickNav and Slick are two separate plugins used in this project.
+SlickNav defines the behavior of the mobile navigation and its Sass files can be found in
+the css folder. Slick is a content carousel and all its files are located in the plugins folder.*/
+
 
 // Mobile Start Screen Animation & Slick Carousel Initiation
 
@@ -8,11 +12,17 @@ var $carousel = $('.carousel');
 var $carousel_val = {
 	autoplay: true,
 	cssEase: "ease-out",
-	fade: true,
 	pauseOnHover: true,
-	autoplaySpeed: 4000,
-	arrows: false
-}
+	autoplaySpeed: 5000,
+	arrows: false,
+	mobileFirst: true,
+	responsive: [{
+		breakpoint: 650,
+		settings: {
+			fade: true,
+		}
+	}]
+};
 
 if ($mbIntro.css('display') == 'block') {
 
@@ -26,7 +36,6 @@ $mbIntroBottom.on('click touchend', function () {
 	$menu.slicknav(); //Initialize slicknav on header close
 	$carousel.show();
 	$carousel.slick($carousel_val);
-
 });
 
 } else {
@@ -34,6 +43,5 @@ $mbIntroBottom.on('click touchend', function () {
 	$menu.slicknav();
 	$carousel.slick($carousel_val);
 }
-
 
 

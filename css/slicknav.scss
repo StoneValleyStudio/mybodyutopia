@@ -45,7 +45,7 @@
 }
 /* Button Text */
 .slicknav_menu  .slicknav_menutxt {
-    color: #001010;
+    color: $black;
     font-weight: bold;
     font-family: 'Geometria', sans-serif;
 }
@@ -100,8 +100,8 @@
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    background:#ccc;
-    color:#222;
+    background:$Rainee;
+    color:$black;
 }
 .slicknav_nav .slicknav_txtnode {
      margin-left:15px;   

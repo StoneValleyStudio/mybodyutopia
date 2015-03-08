@@ -1,3 +1,5 @@
+
+
 //Color Scheme
 
 $Orinoco: #E3F9CE; //base color
@@ -5,6 +7,7 @@ $Fern: #5C7940;
 $Rainee: #B4C6A4;
 $Ash: #6F7964;
 	//mixin for body copy color
+	$Ash-dim: darken($Ash, 20%);
 	$Ash-darken: darken($Ash, 40%);
 	$black: $Ash-darken;
 	$Ash-lighten: lighten($Ash, 52%);
@@ -13,13 +16,7 @@ $Mindaro: #BEFA84;
 $Wisteria: #A56CAC;
 $Perfume: #F4CEF9;
 
-//Font Sizes
-
-$geometria-h1: 3.998em;
-$geometria-h2: 2.827em;
-$geometria-h3: 1.999em;
-$geometria-base: 1.25em;
-
 //Misc
 
+$imgtxt-overlay: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65));
 $imgtxt-overlay-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
