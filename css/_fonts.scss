@@ -1,3 +1,6 @@
+@import "variables.scss";
+
+
 //Declare base font size
 
 html{
@@ -24,6 +27,10 @@ html{
 //Lustria
 
 @import url('http://fonts.googleapis.com/css?family=Lustria');
+
+//others
+
+@import url(http://fonts.googleapis.com/css?family=Cantata+One|Coustard|Merriweather|Volkhov);
 
 //END Lustria
 
@@ -78,6 +85,9 @@ html{
 
 .icon-mail:before {
 	content: "\e60b";
+	display: block;
+	font-size: 3em;
+	color: $Fern;
 }
 
 .icon-googleplus:before {
@@ -85,8 +95,8 @@ html{
 }
 
 .icon-facebook:before {
-	display: block;
 	content: "\e60d";
+	display: block;
 	font-size: 3em;
 	color: $Fern;
 
@@ -129,8 +139,8 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 3.157em;
+  margin-top: 0.5em;
+  font-size: 4.7em;
   font-family: 'Geometria', sans-serif;
 }
 
@@ -141,14 +151,12 @@ h2 {font-size: 2.369em;
 h3 {font-size: 1.777em;
   font-family: 'Geometria', sans-serif;}
 
-p {font-size: 1.333em;
-	font-family: 'Lustria', serif;}
+p {font-size: 1.45em;
+	font-family: 'Lustria', serif;
+line-height: $line-height;}
 
 .font_small {font-size: 0.75em;}
 .dropcap{
 	@extend %dropcap;
 	font-family: 'Geometria', sans-serif;
 }
-
-$line-height: 1.429;
-$line-height-min: 1.25;

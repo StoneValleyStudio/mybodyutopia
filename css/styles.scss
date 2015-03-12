@@ -1,6 +1,6 @@
-@import "_variables.scss";
-@import "_mixin.scss";
-@import "_fonts.scss";
+@import "variables.scss";
+@import "mixin.scss";
+@import "fonts.scss";
 @import "slicknav.scss";
 
 *{
@@ -37,6 +37,7 @@ body{
 	h1{
 		text-align: center;
 		color: $white;
+		text-shadow: 0 0 20px $black;
 
 	}
 
@@ -63,29 +64,52 @@ body{
 		}
 	}
 
-	@media screen and (min-width: 650px){
+	@media screen and (min-width: 615px){
 		display: none;
 	}
 }
 
 header{
+	position: relative;
 	display: none;
-	height: 80%;
-	background: $imgtxt-overlay-gradient, url('../imgs/bg_grass.jpg');
+	@include hw (80%, 100%);
+	background: url(../imgs/fern-bg.png);
 	padding: 1.2em;
 	padding-bottom: 4em;
 	border-radius: 0 0 4.4% 4.4%;
+	color: $black;
+	@include vendors (box-shadow, 0px 0.6em 0.7em -0.2em $Ash);
 
 	h1{
-		display: none;
+		font-size: 5.375em;
+		margin-left: 20%;
+		text-shadow: 0 0 20px $Orinoco;
+		color: $Orinoco;
 	}
 
-	@media screen and (min-width: 650px){
-		display: block;
+	h2{
+		font-family: 'Merriweather', serif;
+		font-size: 1.777em;
+		letter-spacing: 0.04em;
+		text-align: left;
+		margin-left: 0.5%;
+		margin-top: 0;
+		color: $Orinoco;
 
-		h1{
-			display: block;
+		@media screen and (min-width: 1150px){
 		}
+	}
+
+	/*Edit slogan if need be
+
+	.slogan{};
+
+	*/
+
+
+	@media screen and (min-width: 615px){
+		display: block;
+		border-radius: 0;
 	}
 }
 
@@ -106,45 +130,70 @@ header{
 		box-shadow: 0 0 0.5em 0.05em $Mindaro;
 	}
 
-	@media screen and (min-width: 650px){
+	@media screen and (min-width: 615px){
 		display: none;
 	}
 }
 
 nav{
+	display: none;
 	width: 100%;
+	height: 5em;
+	background: url('../imgs/ash-bg.png');
+	border-top: 0.15em solid $Orinoco;
+	border-bottom: 0.15em solid $Ash-darken;
+
+	&.fix{
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
 
 	#menu{
-		display: none;
+		max-width: 100%;
 		width: 100%;
+		margin:0;
 		text-align: center;
 
 	a{
 		display: inline-block;
-		width: 10%;
-		padding: 0.4em;
-		background: $Ash;
-		color: $white;
+		padding: 0.75em;
+		margin: 0.4em 0.4em 0 0.4em;
+		background: $Orinoco;
+		box-shadow: inset 0 0 0.1em $white;
+		color: $Ash-dim;
+		font-size: 1.5em;
+		font-family: 'Geometria', sans-serif;
+		border-radius: 12.5%;
+		text-decoration: none;
+		@include vendors (box-shadow, inset 0px 0px 0.5em 0px $Ash);
 	}
 
-		@media screen and (min-width: 650px){
-			display: block;
 
-			img{
-				max-width: 25%;
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
+	img{
+		max-width: 25%;
+		position: absolute;
+		top: 0.5em;
+		right: 0.5em;
+	}
+
+		@media screen and (min-width: 1150px){
+			display: block;
+			margin-left: 1.25%;
+			text-align: left;
 		}
+	}
+
+	@media screen and (min-width: 615px){
+		display: block;
 	}
 }
 
 #content-wrap{
 	@include hw (auto, 100%);
 	position: absolute;
-	z-index: -1000;
 	margin-top: 3em;
+	z-index: -1000;
 	padding-top: 1.5em;
 }
 
@@ -176,7 +225,7 @@ nav{
 				color: $white;
 			}
 
-			@media screen and (min-width: 650px){
+			@media screen and (min-width: 615px){
 				background: url(../imgs/rainee-bg.png);
 			}
 
@@ -184,7 +233,7 @@ nav{
 			img[src*="logo"]{
 				display: none;
 
-				@media screen and (min-width: 650px){
+				@media screen and (min-width: 615px){
 					display: block;
 				}
 			}
@@ -209,12 +258,30 @@ nav{
 				margin-top: 5em;
 				width: 100%;
 				text-align: center;
-			}		
+			}	
 		}
 
-		@media screen and (min-width: 650px){
+		@media screen and (min-width: 615px){
 			border-radius: 0;
+			@include hw(19em, 100%);
 		}
+
+		@media screen and (min-width: 1150px){
+			@include hw (24em, 100%);
+		}
+	}
+
+	@media screen and (min-width: 615px){
+		height: 19em;
+		max-width: 90%;
+		margin: 0 auto;
+		box-shadow: 1px 0.2em 0.4em $Ash;
+	}
+
+	@media screen and (min-width: 1150px){
+		@include hw(24em, 60%);
+		margin-left: 4%;
+		float: left;
 	}
 }
 
@@ -231,14 +298,18 @@ nav{
 
 	button{
 		@include hw(auto, 80%);
-		background: $Mindaro;
-		color: $Fern;
+		background: desaturate($Mindaro, 5%);
+		color: $Ash-dim;
 		margin: 0 auto;
 		padding: 0.75em;
 		text-align: center;
 		border-radius: 17.5%;
 		box-shadow: 1px 0.2em 0.4em $Ash;
 		font-size: 1.333em;
+
+		h3{
+			margin: 0;
+		}
 
 		&:focus{
 			outline: 0;
@@ -247,14 +318,27 @@ nav{
 		&:active{
 		box-shadow: inset 1px 0.2em 0.4em $Ash;
 		}
+
+		@media screen and (min-width: 1150px){
+			width: 80%;
+			right: 0.5%;
+		}
+	}
+
+	@media screen and (min-width: 1150px){
+		float: right;
+		width: 25%;
+		height: auto;
+		margin-right: 5%;
 	}
 }
 
-p{
+p.welcome{
 	width: 96%;
 	margin: 1.3em auto 0;
 	text-align: left;
-	line-height: $line-height;
+	clear: both;
+	color: $Ash-darken;
 
 	img[src*="logo"]{
 		display: block;
@@ -262,20 +346,39 @@ p{
 		@include hw(auto, 70%)
 	}
 
-	&.welcome{
-		color: $Ash-darken;
-
 	&::first-line{
 		font-family: 'Geometria', sans-serif;
 		font-size: 1.6em;
 		text-align: center;
-	}
-	}
+		}
 
+	@media screen and (min-width: 615px){
+		width: 65%;
+		padding-top: 4em;
+
+		img{
+			float: right;
+			max-width: 20%;
+			margin: 2em;
+		}
+	}
+}
+
+
+table{
 }
 
 .values{
 	text-align: center;
+	background: $Rainee;
+	color: $Ash-darken;
+
+	@media screen and (min-width: 615px){
+		max-width: 65%;
+		float: left;
+		padding: 0.5em;
+	}
+
 }
 
 .social-cta{
@@ -290,6 +393,18 @@ p{
 		&:hover{
 			@include vendors(transform, scale(1.25, 1.25));
 		}
+
+		@media screen and (min-width: 615px){
+			float: none;
+		}
+
+		@media screen and (min-width: 1150px){
+			float: left;
+
+			> h2{
+				float: right;
+			}
+		}
 	}
 
 	.icon-twitter{
@@ -299,15 +414,149 @@ p{
 		&:hover{
 			@include vendors(transform, scale(1.25, 1.25));
 		}
+
+		@media screen and (min-width: 615px){
+			float: none;
+		}
+
+		@media screen and (min-width: 1150px){
+			float: left;
+
+			> h2{
+				float: right;
+			}
+		}
 	}
 
 	h2{
 		display: none;
 	}
 
-	@media screen and (min-width: 650px){
+	@media screen and (min-width: 615px){
+		float: right;
+		max-width: 30%;
+		margin-top: 5em;
+	}
+
+	@media screen and (min-width: 1150px){
+
 		h2{
 			display: block;
 		}
 	}
+}
+
+/****************** SHOP *******************/
+
+#store{
+	margin-top: 10em;
+}
+
+a.anchor{
+	text-decoration: none;
+	color: $Ash-dim;
+
+		@media screen and (min-width: 615px){
+		}
+
+		@media screen and (min-width: 1150px){
+			width: 70%;
+		}
+
+	div.heading{
+		position: relative;
+		height: 5.25em;
+		background: url('../imgs/rainee-bg.png');
+		margin: 2em auto 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		cursor: pointer;
+		border-radius: 50% 50% 0 0;
+		border: 2px solid $Ash;
+		border-left: none;
+		border-right: none;
+
+		h1{
+			margin: 0 auto;
+			text-align: center;
+			font-size: 2.369em;
+		}
+
+		@media screen and (min-width: 615px){
+		}
+
+		@media screen and (min-width: 1150px){
+			width: 70%;
+		}
+	}
+}
+
+section.category{
+	padding: 0.25em;
+	background: url('../imgs/ash-bg.png');
+	color: $Orinoco;
+	letter-spacing: 0.2px;
+	line-height: 1.2;
+	margin: 0 auto;
+
+	h2{
+		margin: 0.5em;
+		text-align: center;
+		color: $Orinoco;
+	}
+
+	p{
+		width: 80%;
+		margin: 0.75em auto;
+		text-align: center;
+	}
+
+		@media screen and (min-width: 615px){
+		}
+
+		@media screen and (min-width: 1150px){
+			width: 70%;
+		}
+}
+
+/************************
+
+MISSION PAGE
+
+*************************/
+
+.mission{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 4em;
+}
+
+/************************
+
+CONTACT PAGE
+
+*************************/
+
+.contact-icons{
+	width: 80%;
+	margin: 4em auto;
+}
+
+.contact-h2{
+	float: right;
+	margin: 0;
+	text-align: left;
+}
+
+
+footer{
+	display: block;
+	bottom: 0;
+	margin-top: 2em;
+	clear: both;
+	height: 15em;
+	width: 100%;
+	background: $Ash;
 }

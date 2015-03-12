@@ -44,4 +44,19 @@ $mbIntroBottom.on('click touchend', function () {
 	$carousel.slick($carousel_val);
 }
 
+//Header "Parallax" Scroll
+
+//Shop Drop Content
+
+$('section').hide()
+
+var $heading = $('a.anchor');
+
+$heading.next().hide();
+
+$heading.on('click touchend', function(){
+	$(this).next().slideDown();
+	$heading.not(this).next().slideUp();
+});
+
 
